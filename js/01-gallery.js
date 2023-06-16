@@ -8,7 +8,7 @@ galleryImages.insertAdjacentElement("beforeend", markup);
 function createImageGallery(galleryItems) {
     return galleryItems
     .map( 
-        ({preview, origiginal, description}) => {
+        ({preview, original, description}) => {
             return ` 
             <li class = "gallery__item">
             <a class = "gallery__link" href = "${original}">

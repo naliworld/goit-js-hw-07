@@ -1,12 +1,12 @@
-import { galleryItems } from './gallery-items.js';
+import { GalleryItems } from './gallery-items.js';
 // Change code below this line
-const galleryImages = document.querySelector("ul.gallery");
-const markup = createImageGallery(galleryItems)
+const GalleryImages = document.querySelector("ul.gallery");
+const markup = createImageGallery(GalleryItems)
 
-galleryImages.insertAdjacentElement("beforeend", markup);
+GalleryImages.insertAdjacentElement("beforeend", markup);
 
-function createImageGallery(galleryItems) {
-    return galleryItems
+function createImageGallery(GalleryItems) {
+    return GalleryItems
     .map( 
         ({preview, original, description}) => {
             return ` 
@@ -18,9 +18,16 @@ function createImageGallery(galleryItems) {
         }
     )
 };
+join("");
+const onGalleryItemsClick = (e) => {
+    e.preventDefault();
 
-let lightbox = new SimpleLightbox (".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-});
+    if (e.target.classList.contains("gallery__image")) 
+    return;
+    const source = e.target.dataset.source;
+    const instance = basicLightbox.create (`
+    <img src ="${source}" widt ="800" height="600">`);
+    instance.show();
+}
+galleryImages.addEventListener("click", onGalleryItemsClick );
 console.log(galleryItems);

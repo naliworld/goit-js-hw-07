@@ -31,5 +31,5 @@ const onGalleryItemsClick = (e) => {
     onClose: (instance) => galleryImages.removeEventListener ("click", onGalleryItemsClick),`
 }
 
-galleryImages.addEventListener("click", onGalleryItemsClick );
+galleryImages.addEventListener("click", onGalleryItemsClick);
 console.log(galleryItems);

@@ -26,8 +26,10 @@ const onGalleryItemsClick = (e) => {
     return;
     const source = e.target.dataset.source;
     const instance = basicLightbox.create (`
-    <img src ="${source}" width ="800" height="600">`);
-    instance.show();
+     <img src = "${source}" width = "800" height = "600"></img> `), 
+    onShow: (instance) => galleryImages.addEventListener("click", onGalleryItemsClick),
+    onClose: (instance) => galleryImages.removeEventListener ("click", onGalleryItemsClick),`
 }
+
 galleryImages.addEventListener("click", onGalleryItemsClick );
 console.log(galleryItems);

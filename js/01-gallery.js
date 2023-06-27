@@ -1,12 +1,12 @@
-import { GalleryItems } from './gallery-items.js';
+import { galleryItems } from './gallery-items.js';
 // Change code below this line
-const GalleryImages = document.querySelector("ul.gallery");
-const markup = createImageGallery(GalleryItems);
+const galleryImages = document.querySelector(".gallery");
+const markup = createImageGallery(galleryItems);
 
-GalleryImages.insertAdjacentHTML("beforeend", markup);
+galleryImages.insertAdjacentHTML("beforeend", markup);
 
-function createImageGallery(GalleryItems) {
-    return GalleryItems
+function createImageGallery(galleryItems) {
+    return galleryItems
     .map( 
         ({preview, original, description}) => {
             return` 
@@ -24,8 +24,8 @@ function onGalleryItemsClick(e) {
         return;
     const source = e.target.dataset.source;
     const instance = basicLightbox.create(`<img src="${source}" width="800" height="600"></img>`);
-    onShow;(instance) => galleryImages.addEventListener; ("click", onGalleryItemsClick);
-    onClose;(instance) => galleryImages.removeEventListener("click", onGalleryItemsClick);
+    onShow:(instance) => galleryImages.addEventListener; ("click", onGalleryItemsClick);
+    onClose:(instance) => galleryImages.removeEventListener("click", onGalleryItemsClick);
 }
 galleryImages.addEventListener("click", onGalleryItemsClick);
 console.log(galleryItems);
